@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Trailer Spot</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="script.js"></script>
+
+
+    </head>
+
+    <body id="body">
+
+    <!-----------preloader signifies the Loading screen----------------->
+
+        <div id="preloader">
+            <center>
+                <div style="color: #FFFFFF; font-size: 25px; margin-top: 20%;">
+                    Loading
+                </div>
+                <div class="preloader_bar">
+                    <div class="preloader_progress_bar" id="preloader_progress_bar">
+                    </div>
+                </div>
+            </center>
+        </div>
+    
+    
+    <!----------------------Navigation bar--------------------->
+
+        <div class="nav" id="nav">
+            <div class="nav-logo">
+                Trailer Spot
+            </div>
+        </div>
+    
+
+    <!--------------------Movies-header signifies the topmost movies animation------------------------->
+        
+        <div class="banner" id="banner">
+            <div class="banner-contents">
+                <h1 class="banner-title" id="banner-title">
+                </h1>
+           
+                <div class="banner-description" id="banner-description">
+                </div>
+            </div>
+            <div class="banner--fadeBottom"></div>
+        </div>
+
+    <!-------------------loading after clicking on a movie-tile--------------------->
+
+        <div class="row-expand-container" id="row-expand-container">
+            <div id="row-expand-loader">
+                <img src="/movies-tile/loader3.gif">
+            </div>
+
+    <!----This code signifies the expansion of movie box when we hover over them------>
+
+            <div class="row-expand" id="row-expand">
+                <div class="row-expand-name" id="row-expand-name">
+                </div>
+                <div class="row-expand-rating" id="row-expand-rating">
+                </div>
+                <div class="row-expand-play-btn" onclick="playVideo();">
+                    Play
+                </div>
+                <div class="row-expand-description" id="row-expand-description">
+                </div>
+            
+    <!----------------This code signifies the opening of video container----------->
+                
+                <div class="row-expand-video-container" id="row-expand-video-container"></div>
+                <div onclick="expandRowDetails(false, '');" class="row-expand-close-btn">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+
+    <!--When you scroll down the page, this script made your topmost nav-bar black and stick it with page-->
+
+        <script>
+            const nav = document.getElementsByClassName('nav');
+            window.addEventListener('scroll', () => {
+                if(window.scrollY >= 100) {
+                    nav[0].classList.add('nav-black');
+                }
+                else {
+                    nav[0].classList.remove('nav-black');
+                }
+            });
+        </script>
+
+    <!--This script will call the preloader when we first start the website------->
+
+        <script>
+            var loader = document.getElementById("preloader");
+
+            window.addEventListener("load", function(){
+                loader.style.display = "none";
+            })
+        </script>
+
+        <!-- <div id="movies-content">
+        </div> -->
+
+
+    </body>
+</html>
